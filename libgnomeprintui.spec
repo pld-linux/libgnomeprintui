@@ -1,28 +1,28 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	2.8.2
-Release:	2
-License:	LGPL
+Version:	2.10.0.1
+Release:	1
+License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	b38d1f6813dd52879ba4174ddc3f1b1c
+Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomeprintui/2.10/%{name}-%{version}.tar.bz2
+# Source0-md5:	36e2775878fb518d30dcf5c3d6438d89
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 2.7.2
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gnome-icon-theme >= 2.8.0
-BuildRequires:	gtk+2-devel >= 2:2.4.4
+BuildRequires:	gnome-icon-theme >= 2.10.0
+BuildRequires:	gtk+2-devel >= 2:2.6.3
 BuildRequires:	gtk-doc >= 1.0
-BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgnomecanvas-devel >= 2.7.92
-BuildRequires:	libgnomeprint-devel >= 2.8.2
+BuildRequires:	libglade2-devel >= 1:2.5.0
+BuildRequires:	libgnomecanvas-devel >= 2.10.0
+BuildRequires:	libgnomeprint-devel >= 2.10.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig 
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	gnome-icon-theme >= 2.8.0
-Requires:	gtk+2 >= 2:2.4.4
-Requires:	libgnomeprint >= 2.8.2
+Requires:	gnome-icon-theme >= 2.10.0
+Requires:	gtk+2 >= 2:2.6.3
+Requires:	libgnomeprint >= 2.10.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,9 +36,9 @@ Summary:	Headers for libgnomeprintui
 Summary(pl):	Pliki nag³ówkowe libgnomeprintui
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk+2-devel >= 2:2.4.4
-Requires:	libgnomecanvas-devel >= 2.7.92
-Requires:	libgnomeprint-devel >= 2.8.0
+Requires:	gtk+2-devel >= 2:2.6.3
+Requires:	libgnomecanvas-devel >= 2.10.0
+Requires:	libgnomeprint-devel >= 2.10.0
 
 %description devel
 The libgnomeprintui package contains GTK+ widgets related to printing.
@@ -75,7 +75,6 @@ Statyczna wersja bibliotek libgnomeprintui.
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
-
 %{__make}
 
 %install
