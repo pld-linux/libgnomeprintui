@@ -5,7 +5,7 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	1.120.0
+Version:	1.112.0
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
