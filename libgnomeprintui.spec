@@ -59,6 +59,7 @@ Statyczna wersja bibliotek libgnomeprintui.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
