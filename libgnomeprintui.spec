@@ -1,19 +1,26 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	2.4.2
-Release:	2
+Version:	2.6.0
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	5a28283f32efaa6fa401c5e9385b9634
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	e6a84427a66f75137f3db735aaddacdc
+Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
-BuildRequires:	gtk+2-devel >= 2.2.0
-BuildRequires:	libglade2-devel >= 2.0.0
-BuildRequires:	libgnomecanvas-devel >= 2.4.0
-BuildRequires:	libgnomeprint-devel >= 2.4.2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gnome-common >= 2.4.0
+BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	gtk-doc >= 1.0
+BuildRequires:	libglade2-devel >= 2.3.6
+BuildRequires:	libgnomecanvas-devel >= 2.6.0
+BuildRequires:	libgnomeprint-devel >= 2.6.0
+BuildRequires:	libtool
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	libgnomeprint >= 2.4.2
+Requires:	libgnomeprint >= 2.6.0
+Requires:	gtk+2 >= 2:2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,10 +33,10 @@ Pakiet libgnomeprintui zawiera widgety GTK+ zwi±zane z drukowaniem.
 Summary:	Headers for libgnomeprintui
 Summary(pl):	Pliki nag³ówkowe libgnomeprintui
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
-Requires:	gtk+2-devel >= 2.2.0
-Requires:	libgnomecanvas-devel >= 2.1.5
-Requires:	libgnomeprint-devel >= 2.4.2
+Requires:	%{name} = %{version}-%{release}
+Requires:	gtk+2-devel >= 2:2.4.0
+Requires:	libgnomecanvas-devel >= 2.6.0
+Requires:	libgnomeprint-devel >= 2.6.0
 
 %description devel
 The libgnomeprintui package contains GTK+ widgets related to printing.
@@ -47,7 +54,7 @@ u¿ywaj±cych libgnomeprintui.
 Summary:	Static libgnomeprintui libraries
 Summary(pl):	Biblioteki statyczne libgnomeprintui
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of libgnomeprintui libraries.
@@ -57,12 +64,19 @@ Statyczna wersja bibliotek libgnomeprintui.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv po/{no,nb}.po
 
 %build
-cp -f /usr/share/automake/config.sub .
+%{__libtoolize}
+%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
+
 %{__make}
 
 %install
