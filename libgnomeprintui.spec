@@ -10,7 +10,7 @@ Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/libgnomeprintui/%{name
 URL:		http://www.gnome.org/
 BuildRequires:	gtk+2-devel >= 2.0.2
 BuildRequires:	libgnomeprint-devel >= 1.115.0
-BuildRequires:	libgnomecanvas-devel >= 2.0.0
+BuildRequires:	libgnomecanvas-devel >= 2.0.1
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
