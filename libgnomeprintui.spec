@@ -1,6 +1,3 @@
-%define gtk2_version 1.3.13
-%define libgnomeprint_version 1.110.0
-%define libgnomecanvas_version 1.110.0
 
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
