@@ -1,19 +1,25 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	2.5.2
+Version:	2.5.3
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	6eb7b9219b120f7b87ddc2f96905e080
+# Source0-md5:	8a66d47e218ecc924f700671e3914d1c
+Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gnome-common >= 2.4.0
 BuildRequires:	gtk+2-devel >= 1:2.3.1
+BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	libglade2-devel >= 2.3.1
 BuildRequires:	libgnomecanvas-devel >= 2.5.1
-BuildRequires:	libgnomeprint-devel >= 2.5.2
+BuildRequires:	libgnomeprint-devel >= 2.5.3
+BuildRequires:	libtool
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	libgnomeprint >= 2.5.2
+Requires:	libgnomeprint >= 2.5.3
 Requires:	gtk+2 >= 1:2.3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,10 +33,10 @@ Pakiet libgnomeprintui zawiera widgety GTK+ zwi±zane z drukowaniem.
 Summary:	Headers for libgnomeprintui
 Summary(pl):	Pliki nag³ówkowe libgnomeprintui
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 1:2.3.1
 Requires:	libgnomecanvas-devel >= 2.5.1
-Requires:	libgnomeprint-devel >= 2.5.2
+Requires:	libgnomeprint-devel >= 2.5.3
 
 %description devel
 The libgnomeprintui package contains GTK+ widgets related to printing.
@@ -48,7 +54,7 @@ u¿ywaj±cych libgnomeprintui.
 Summary:	Static libgnomeprintui libraries
 Summary(pl):	Biblioteki statyczne libgnomeprintui
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of libgnomeprintui libraries.
@@ -58,8 +64,15 @@ Statyczna wersja bibliotek libgnomeprintui.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv po/{no,nb}.po
 
 %build
+%{__libtoolize}
+%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
