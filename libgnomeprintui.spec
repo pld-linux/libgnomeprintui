@@ -5,7 +5,7 @@ Version:	1.116.0
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp.gnome.org:/pub/GNOME/sources/libgnomeprintui/1.116/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org:/pub/GNOME/sources/libgnomeprintui/1.116/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
 BuildRequires:	gtk+2-devel >= 2.0.2
 BuildRequires:	libgnomeprint-devel >= %{version}
