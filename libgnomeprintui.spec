@@ -2,7 +2,7 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	1.112.0
+Version:	1.114.0
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
@@ -29,7 +29,7 @@ Summary(pl):	Pliki nag³ówkowe libgnomeprintui
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	gtk+2-devel >= 2.0.2
-Requires:	libgnomeprint-devel >= 1.110
+Requires:	libgnomeprint-devel >= 1.114.0
 Requires:	libgnomecanvas-devel >= 1.110
 
 %description devel
@@ -71,7 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 	pkgconfigdir=%{_pkgconfigdir} \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf AUTHORS ChangeLog NEWS README
 
 %find_lang %{name}
 
@@ -83,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
