@@ -1,28 +1,28 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	2.10.0.1
+Version:	2.10.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomeprintui/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	36e2775878fb518d30dcf5c3d6438d89
+# Source0-md5:	448b2a8e9509fee63f12e5eac2be94c9
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 2.7.2
 BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gnome-icon-theme >= 2.10.0
-BuildRequires:	gtk+2-devel >= 2:2.6.3
-BuildRequires:	gtk-doc >= 1.0
-BuildRequires:	libglade2-devel >= 1:2.5.0
+BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	gtk-doc >= 1.3
+BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomecanvas-devel >= 2.10.0
-BuildRequires:	libgnomeprint-devel >= 2.10.0
+BuildRequires:	libgnomeprint-devel >= 2.10.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig 
 BuildRequires:	rpm-build >= 4.1-10
 Requires:	gnome-icon-theme >= 2.10.0
-Requires:	gtk+2 >= 2:2.6.3
-Requires:	libgnomeprint >= 2.10.0
+Requires:	gtk+2 >= 2:2.6.4
+Requires:	libgnomeprint >= 2.10.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,9 +36,9 @@ Summary:	Headers for libgnomeprintui
 Summary(pl):	Pliki nag³ówkowe libgnomeprintui
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk+2-devel >= 2:2.6.3
+Requires:	gtk+2-devel >= 2:2.6.4
 Requires:	libgnomecanvas-devel >= 2.10.0
-Requires:	libgnomeprint-devel >= 2.10.0
+Requires:	libgnomeprint-devel >= 2.10.1
 
 %description devel
 The libgnomeprintui package contains GTK+ widgets related to printing.
