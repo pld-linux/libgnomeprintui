@@ -1,7 +1,7 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	2.1.3
+Version:	2.1.4
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
@@ -13,7 +13,7 @@ BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomecanvas-devel >= 2.1.4
 BuildRequires:	libgnomeprint-devel >= 2.1.3
 BuildRequires:	rpm-build >= 4.1-8.2
-Requires:	libgnomeprint >= 2.1.3
+Requires:	libgnomeprint >= 2.1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
