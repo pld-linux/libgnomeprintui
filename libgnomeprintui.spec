@@ -12,6 +12,7 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common >= 2.4.0
+BuildRequires:	gnome-icon-theme >= 1.2.0
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	libglade2-devel >= 2.3.6
@@ -19,8 +20,9 @@ BuildRequires:	libgnomecanvas-devel >= 2.6.0
 BuildRequires:	libgnomeprint-devel >= 2.6.0
 BuildRequires:	libtool
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	libgnomeprint >= 2.6.0
+Requires:	gnome-icon-theme >= 1.2.0
 Requires:	gtk+2 >= 2:2.4.0
+Requires:	libgnomeprint >= 2.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
