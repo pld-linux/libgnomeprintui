@@ -60,7 +60,7 @@ Statyczna wersja bibliotek libgnomeprintui.
 %setup -q
 
 %build
-autoconf
+%{__autoconf}
 %configure
 %{__make}
 
