@@ -18,6 +18,7 @@ BuildRequires:	libglade2-devel >= 1:2.4.0
 BuildRequires:	libgnomecanvas-devel >= 2.7.92
 BuildRequires:	libgnomeprint-devel >= 2.8.2
 BuildRequires:	libtool
+BuildRequires:	pkgconfig 
 BuildRequires:	rpm-build >= 4.1-10
 Requires:	gnome-icon-theme >= 2.8.0
 Requires:	gtk+2 >= 2:2.4.4
