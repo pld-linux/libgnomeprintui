@@ -8,11 +8,10 @@ Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	9962ae98b5722f1eb30bb802296b646f
 URL:		http://www.gnome.org/
-BuildRequires:	autoconf
 BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
-BuildRequires:	libgnomeprint-devel >= 2.3.0
+BuildRequires:	libgnomeprint-devel >= 2.4.0
 BuildRequires:	rpm-build >= 4.1-10
 Requires:	libgnomeprint >= 2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,7 +29,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	gtk+2-devel >= 2.2.0
 Requires:	libgnomecanvas-devel >= 2.1.5
-Requires:	libgnomeprint-devel >= %{version}
+Requires:	libgnomeprint-devel >= 2.4.0
 
 %description devel
 The libgnomeprintui package contains GTK+ widgets related to printing.
@@ -60,7 +59,6 @@ Statyczna wersja bibliotek libgnomeprintui.
 %setup -q
 
 %build
-%{__autoconf}
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
