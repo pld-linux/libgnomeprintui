@@ -7,10 +7,11 @@ License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org:/pub/GNOME/sources/libgnomeprintui/1.116/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
+BuildRequires:	autoconf
 BuildRequires:	gtk+2-devel >= 2.0.2
-BuildRequires:	libgnomeprint-devel >= %{version}
-BuildRequires:	libgnomecanvas-devel >= 2.0.1
 BuildRequires:	libglade2-devel >= 2.0.0
+BuildRequires:	libgnomecanvas-devel >= 2.0.1
+BuildRequires:	libgnomeprint-devel >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -29,8 +30,8 @@ Summary(pl):	Pliki nag³ówkowe libgnomeprintui
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	gtk+2-devel >= 2.0.2
-Requires:	libgnomeprint-devel >= %{version}
 Requires:	libgnomecanvas-devel >= 1.110
+Requires:	libgnomeprint-devel >= %{version}
 
 %description devel
 The libgnomeprintui package contains GTK+ widgets related to printing.
@@ -70,7 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	pkgconfigdir=%{_pkgconfigdir} \
 	DESTDIR=$RPM_BUILD_ROOT
-
 
 %find_lang %{name}
 
