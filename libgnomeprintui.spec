@@ -5,22 +5,20 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	1.110.0
+Version:	1.120.0
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/libgnomeprintui/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
-Requires:	gtk+2 >= %{gtk2_version}
-Requires:	libgnomeprint >= %{libgnomeprint_version}
-Requires:	libgnomecanvas >= %{libgnomecanvas_version}
-BuildRequires:	gtk+2-devel >= %{gtk2_version}
-BuildRequires:	libgnomeprint-devel >= %{libgnomeprint_version}
-BuildRequires:	libgnomecanvas-devel >= %{libgnomecanvas_version}
+BuildRequires:	gtk+2-devel >= 2.0.2
+BuildRequires:	libgnomeprint-devel >= 1.112
+BuildRequires:	libgnomecanvas-devel >= 1.114
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define         _sysconfdir     /etc/X11/GNOME2
 
 %description
 The libgnomeprintui package contains GTK+ widgets related to printing.
@@ -33,9 +31,9 @@ Summary:	Headers for libgnomeprintui
 Summary(pl):	Pliki nag³ówkowe libgnomeprintui
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gtk2+-devel >= %{gtk2_version}
-Requires:	libgnomeprint-devel >= %{libgnomeprint_version}
-Requires:	libgnomecanvas-devel >= %{libgnomecanvas_version}
+Requires:	gtk2+-devel >= 2.0.2
+Requires:	libgnomeprint-devel >= 1.110
+Requires:	libgnomecanvas-devel >= 1.110
 
 %description devel
 The libgnomeprintui package contains GTK+ widgets related to printing.
@@ -72,6 +70,7 @@ Statyczna wersja bibliotek libgnomeprintui.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
+	pkgconfigdir=%{_pkgconfigdir} \
 	DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS ChangeLog NEWS README
@@ -86,14 +85,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc {AUTHORS,ChangeLog,NEWS,README}.gz
+%doc *.gz
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%{_libdir}/pkgconfig/*
+%{_pkgconfigdir}/*.pc
 %{_includedir}/*
 
 %files static
