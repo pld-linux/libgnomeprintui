@@ -1,19 +1,19 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	2.5.1
+Version:	2.5.2
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	b7de8735a471da3d5afce5bc4d35376e
+# Source0-md5:	6eb7b9219b120f7b87ddc2f96905e080
 URL:		http://www.gnome.org/
 BuildRequires:	gtk+2-devel >= 1:2.3.1
 BuildRequires:	libglade2-devel >= 2.3.1
 BuildRequires:	libgnomecanvas-devel >= 2.5.1
-BuildRequires:	libgnomeprint-devel >= 2.5.1
+BuildRequires:	libgnomeprint-devel >= 2.5.2
 BuildRequires:	rpm-build >= 4.1-10
-Requires:	libgnomeprint >= 2.5.1
+Requires:	libgnomeprint >= 2.5.2
 Requires:	gtk+2 >= 1:2.3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,7 +30,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	gtk+2-devel >= 1:2.3.1
 Requires:	libgnomecanvas-devel >= 2.5.1
-Requires:	libgnomeprint-devel >= 2.5.1
+Requires:	libgnomeprint-devel >= 2.5.2
 
 %description devel
 The libgnomeprintui package contains GTK+ widgets related to printing.
@@ -63,6 +63,7 @@ Statyczna wersja bibliotek libgnomeprintui.
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
+
 %{__make}
 
 %install
