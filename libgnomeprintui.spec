@@ -28,7 +28,7 @@ Summary:	Headers for libgnomeprintui
 Summary(pl):	Pliki nag³ówkowe libgnomeprintui
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gtk2+-devel >= 2.0.2
+Requires:	gtk+2-devel >= 2.0.2
 Requires:	libgnomeprint-devel >= 1.110
 Requires:	libgnomecanvas-devel >= 1.110
 
@@ -60,6 +60,7 @@ Statyczna wersja bibliotek libgnomeprintui.
 %setup -q
 
 %build
+autoconf
 %configure
 %{__make}
 
