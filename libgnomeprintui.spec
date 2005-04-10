@@ -2,7 +2,7 @@ Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
 Version:	2.10.2
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomeprintui/2.10/%{name}-%{version}.tar.bz2
@@ -19,7 +19,7 @@ BuildRequires:	libgnomecanvas-devel >= 2.10.0
 BuildRequires:	libgnomeprint-devel >= 2.10.2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig 
-BuildRequires:	rpm-build >= 4.1-10
+BuildRequires:	rpmbuild(macros) >= 1.197
 Requires:	gnome-icon-theme >= 2.10.0
 Requires:	gtk+2 >= 2:2.6.4
 Requires:	libgnomeprint >= 2.10.2
@@ -92,8 +92,11 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post
+%ldconfig_post
+
+%postun
+%ldconfig_postun
 
 %files -f %{name}-2.2.lang
 %defattr(644,root,root,755)
