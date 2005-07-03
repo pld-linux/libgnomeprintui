@@ -1,12 +1,16 @@
+# TODO:
+# unpackaged:
+# /usr/share/libgnomeprintui/2.11.0/gnome-print-job-preview.xml
+# 
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	2.10.2
-Release:	2
+Version:	2.11.0
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomeprintui/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	01fce7918f4e106e00ee8b5447783e4c
+Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomeprintui/2.11/%{name}-%{version}.tar.bz2
+# Source0-md5:	74b789540df146aa997252616bed4c26
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 2.7.2
@@ -16,13 +20,13 @@ BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	gtk-doc >= 1.3
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomecanvas-devel >= 2.10.0
-BuildRequires:	libgnomeprint-devel >= 2.10.2
+BuildRequires:	libgnomeprint-devel >= 2.11.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig 
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires:	gnome-icon-theme >= 2.10.0
 Requires:	gtk+2 >= 2:2.6.4
-Requires:	libgnomeprint >= 2.10.2
+Requires:	libgnomeprint >= 2.11.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
