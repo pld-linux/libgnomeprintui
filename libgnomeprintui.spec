@@ -1,12 +1,8 @@
-# TODO:
-# unpackaged:
-# /usr/share/libgnomeprintui/2.11.0/gnome-print-job-preview.xml
-# 
 Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
 Version:	2.11.0
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomeprintui/2.11/%{name}-%{version}.tar.bz2
@@ -103,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_datadir}/%{name}/%{version}/gnome-print-job-preview.xml
 
 %files devel
 %defattr(644,root,root,755)
