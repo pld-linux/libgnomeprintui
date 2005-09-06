@@ -99,6 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/%{version}
 %{_datadir}/%{name}/%{version}/gnome-print-job-preview.xml
 
 %files devel
