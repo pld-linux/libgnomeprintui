@@ -2,7 +2,7 @@ Summary:	GUI support for libgnomeprint
 Summary(pl):	Obs³uga GUI dla libgnomeprint
 Name:		libgnomeprintui
 Version:	2.12.1
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomeprintui/2.12/%{name}-%{version}.tar.bz2
