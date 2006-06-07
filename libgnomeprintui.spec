@@ -21,7 +21,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig 
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires:	gnome-icon-theme >= 2.15.2
-Requires:	gtk+2 >= 2:2.9.3
+Requires:	gtk+2 >= 2:2.9.2
 Requires:	libgnomecanvas >= 2.14.0
 Requires:	libgnomeprint >= 2.12.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
