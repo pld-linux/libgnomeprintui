@@ -1,5 +1,5 @@
 Summary:	GUI support for libgnomeprint
-Summary(pl.UTF-8):   Obsługa GUI dla libgnomeprint
+Summary(pl.UTF-8):	Obsługa GUI dla libgnomeprint
 Name:		libgnomeprintui
 Version:	2.12.1
 Release:	7
@@ -34,7 +34,7 @@ Pakiet libgnomeprintui zawiera widgety GTK+ związane z drukowaniem.
 
 %package devel
 Summary:	Headers for libgnomeprintui
-Summary(pl.UTF-8):   Pliki nagłówkowe libgnomeprintui
+Summary(pl.UTF-8):	Pliki nagłówkowe libgnomeprintui
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.10.0
@@ -55,7 +55,7 @@ używających libgnomeprintui.
 
 %package static
 Summary:	Static libgnomeprintui libraries
-Summary(pl.UTF-8):   Biblioteki statyczne libgnomeprintui
+Summary(pl.UTF-8):	Biblioteki statyczne libgnomeprintui
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
