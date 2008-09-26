@@ -1,12 +1,12 @@
 Summary:	GUI support for libgnomeprint
 Summary(pl.UTF-8):	Obsługa GUI dla libgnomeprint
 Name:		libgnomeprintui
-Version:	2.18.2
+Version:	2.18.3
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeprintui/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	88b404e7b62bb9ad96b25908c1315dcd
+# Source0-md5:	f2c5796f15d6b6701bfa224d856098ce
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 2.7.2
@@ -110,7 +110,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}-2.2.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog MAINTAINERS NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libgnomeprintui-2-2.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgnomeprintui-2-2.so.0
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/%{version}
 %{_datadir}/%{name}/%{version}/gnome-print-job-preview.xml
@@ -121,11 +122,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_pkgconfigdir}/*.pc
-%{_includedir}/*
+%attr(755,root,root) %{_libdir}/libgnomeprintui-2-2.so
+%{_libdir}/libgnomeprintui-2-2.la
+%{_pkgconfigdir}/libgnomeprintui-2.2.pc
+%{_includedir}/libgnomeprintui-2.2
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgnomeprintui-2-2.a
