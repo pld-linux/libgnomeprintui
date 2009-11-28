@@ -10,6 +10,8 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeprintui/2.18/%{name}-%{v
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 2.7.2
+BuildRequires:	docbook-dtd412-xml
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.18.0
 BuildRequires:	gnome-icon-theme >= 2.19.91
 BuildRequires:	gtk+2-devel >= 2:2.12.0
