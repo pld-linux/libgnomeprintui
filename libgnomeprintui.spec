@@ -2,7 +2,7 @@ Summary:	GUI support for libgnomeprint
 Summary(pl.UTF-8):	Obsługa GUI dla libgnomeprint
 Name:		libgnomeprintui
 Version:	2.18.4
-Release:	2
+Release:	3
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeprintui/2.18/%{name}-%{version}.tar.bz2
