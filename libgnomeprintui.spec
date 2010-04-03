@@ -83,6 +83,9 @@ Dokumentacja API libgnomeprintui.
 %prep
 %setup -q
 
+%{__sed} -i -e 's/^en@shaw//' po/LINGUAS
+rm -f po/en@shaw.po
+
 %build
 %{__gtkdocize}
 %{__libtoolize}
