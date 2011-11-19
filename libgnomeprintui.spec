@@ -7,13 +7,13 @@ License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeprintui/2.18/%{name}-%{version}.tar.bz2
 # Source0-md5:	cbfab252ec7e9dc25bb1fe1610c3270b
+Patch0:		%{name}-buildtime.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
-BuildRequires:	automake >= 2.7.2
+BuildRequires:	automake >= 1:1.7.2
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.18.0
-BuildRequires:	gnome-icon-theme >= 2.19.91
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	intltool >= 0.36.2
@@ -25,6 +25,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires:	gnome-icon-theme >= 2.19.91
 Requires:	gtk+2 >= 2:2.12.0
+Requires:	libglade2 >= 1:2.6.2
 Requires:	libgnomecanvas >= 2.19.2
 Requires:	libgnomeprint >= 2.18.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,6 +42,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe libgnomeprintui
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.12.0
+Requires:	libglade2-devel >= 1:2.6.2
 Requires:	libgnomecanvas-devel >= 2.19.2
 Requires:	libgnomeprint-devel >= 2.18.2
 
@@ -82,9 +84,7 @@ Dokumentacja API libgnomeprintui.
 
 %prep
 %setup -q
-
-%{__sed} -i -e 's/^en@shaw//' po/LINGUAS
-rm -f po/en@shaw.po
+%patch0 -p1
 
 %build
 %{__gtkdocize}
@@ -124,10 +124,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}/%{version}
 %{_datadir}/%{name}/%{version}/gnome-print-job-preview.xml
 
-%files apidocs
-%defattr(644,root,root,755)
-%{_gtkdocdir}/libgnomeprintui
-
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnomeprintui-2-2.so
@@ -137,3 +133,7 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libgnomeprintui-2-2.a
+
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/libgnomeprintui

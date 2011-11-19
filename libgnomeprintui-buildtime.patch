@@ -1,0 +1,10 @@
+--- libgnomeprintui-2.18.6/configure.in.orig	2010-09-28 01:34:29.000000000 +0200
++++ libgnomeprintui-2.18.6/configure.in	2011-11-19 14:14:53.215209731 +0100
+@@ -64,7 +64,6 @@
+ 	gtk+-2.0	   >= 2.6.0
+ 	libgnomeprint-2.2  >= 2.12.1
+ 	libgnomecanvas-2.0 >= 1.117.0
+-	gnome-icon-theme   >= 1.1.92
+ ])
+ AC_SUBST(LIBGNOMEPRINTUI_CFLAGS)
+ AC_SUBST(LIBGNOMEPRINTUI_LIBS)
