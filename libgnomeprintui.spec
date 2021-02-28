@@ -75,9 +75,7 @@ Summary:	libgnomeprintui API documentation
 Summary(pl.UTF-8):	Dokumentacja API libgnomeprintui
 Group:		Documentation
 Requires:	gtk-doc-common
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 libgnomeprintui API documentation.
