@@ -5,10 +5,11 @@ Version:	2.18.6
 Release:	5
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomeprintui/2.18/%{name}-%{version}.tar.bz2
+Source0:	https://download.gnome.org/sources/libgnomeprintui/2.18/%{name}-%{version}.tar.bz2
 # Source0-md5:	cbfab252ec7e9dc25bb1fe1610c3270b
 Patch0:		%{name}-buildtime.patch
-URL:		http://www.gnome.org/
+Patch1:		%{name}-gettext.patch
+URL:		https://www.gnome.org/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.7.2
 BuildRequires:	docbook-dtd412-xml
@@ -22,6 +23,7 @@ BuildRequires:	libgnomecanvas-devel >= 2.19.2
 BuildRequires:	libgnomeprint-devel >= 2.18.2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires:	gnome-icon-theme >= 2.19.91
 Requires:	gtk+2 >= 2:2.12.0
@@ -86,6 +88,12 @@ Dokumentacja API libgnomeprintui.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+for f in libgnomeprintui/gpaui/gpa-spinbutton.{c,h} ; do
+	iconv -f iso-8859-1 -t utf-8 "$f" -o "${f}.tmp"
+	%{__mv} "${f}.tmp" "$f"
+done
 
 %build
 %{__gtkdocize}
