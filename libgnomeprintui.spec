@@ -87,8 +87,8 @@ Dokumentacja API libgnomeprintui.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 for f in libgnomeprintui/gpaui/gpa-spinbutton.{c,h} ; do
 	iconv -f iso-8859-1 -t utf-8 "$f" -o "${f}.tmp"
